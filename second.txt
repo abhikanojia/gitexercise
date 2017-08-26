@@ -1,1 +1,1 @@
-Changed second file from master branch
+Changed second file again from master and stashed
