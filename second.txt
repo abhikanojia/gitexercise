@@ -1,2 +1,1 @@
-changed second file $
-
+Changed second file from master branch
