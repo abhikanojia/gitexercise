@@ -36,35 +36,169 @@ git commit -m "Changed first file" #
 
 5. create changes and revert those changes using git when those changes are not added to staging are not in staging area.
 
-git co 
+# echo "Changed second file" > second.txt
+
+git checkout -- second.txt
 
 6. create changes and revert those changes after adding changes to staging area
 
+# echo "Changed second file" > second.txt
+
+git add second.txt
+
+#reset 
+git reset HEAD second.txt
+
 7. create change and revert those changes after committing those changes .
+# echo "Changed second file" > second.txt
+
+git add second.txt # adds to staging
+
+git commit -m "Changed second file" # commit changes
+
+git revert HEAD # reverts the Most recent commit
+
 
 8. Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
 
+git status
+
+git add -u
+
+git status 
+
+
 9. Display all the commits .
+
+git log --oneline
 
 10. Display a specific commit .
 
+git show <commit-hash>
+
 11. create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
+
+# switch to master
+git checkout master
+
+# create branch feature1 
+git branch feature1
+
+# create branch feature2
+git branch feature2
+
+# change branch to feature1
+git checkout feature1
+
+# delete branch feature2
+git branch -D feature2
+
 
 12. Make some commits on "feature1".
 
+git checkout feature1
+
+echo "Changes made to first.txt" > first.txt
+
+git commit -m "Changes made to first.txt from feature1 branch"
+
 13. Make some commits on branch "master".
+
+git checkout master
+
+echo "Changed first.txt from branch master" > first.txt
+
+git add first.txt
+
+git commit -m "Changed first.txt from branch master"
+
 
 14. merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches) 
 
-15.create branch "feature2" from master .
+# switch to master branch
+git checkout master
+
+git merge feature1
+
+# resolve conflict manually
+
+git add first.txt
+
+git commit -m "Resolved conflict and merger feature1 branch to master"
+
+
+15.create branch "feature2" from master.
+
+# switch to master branch 
+
+git checkout master
+
+# create branch feature2
+
+git branch feature2
 
 16. Make some commits on "feature2".
+
+echo "Changed file second.txt from feature2 branch" > second.txt
+
+git add second.txt 
+
+git commit -m "Changed file second.txt from feature2 branch"
+
 
 17. Make some commits on branch "master".
 rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
 
+
+# switch to master branch
+git checkout master
+
+
+echo "Changed file second.txt from master branch" > second.txt
+
+git add second.txt
+
+git commit -m "Changed file second.txt from master branch"
+
+git checkout feature2 
+
+git rebase master
+
+#manually resolve conflict
+
+git add second.txt
+
+git rebase --continue
+
+
 18. find the differences between "merge" and "rebase" in above cases.
+git rebase creates a linear history which is easy to understand
+on the other hand git merge creates a non linear 
+
+git merge - doesnt rewrites the history,
+git rebase - thumb rule is never perform rebasing on a public repository
+
 
 19. Use git stash
 
+# on branch master
+echo "Changes made for stash" > first.txt
+
+git stash save "Changes made in first.txt for stash"
+
+# switch branch
+
+git checkout feature1
+
+git stash pop
+
+git add -u
+
+git commit -m "Changes stashed from master commited in feature1 branch"
+
 20. create a repository on github for your working repository and push changes on remote repository.
+
+# adding remote
+git add origin https://github.com/abhikanojia/gitexercise.git
+
+git push origin --all # pushes all the branches
