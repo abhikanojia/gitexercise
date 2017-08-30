@@ -30,11 +30,13 @@ git diff first.txt # shows changes in files
 git add tes.txt # adds provided file to staging area
 or 
 git add -u # adds all modified files to staging area
-git commit -m "Changed first file " # 
+git commit -m "Changed first file" # 
 
 
 
-5. create changes and revert those changes using git when those changes are not added to staging are
+5. create changes and revert those changes using git when those changes are not added to staging are not in staging area.
+
+git co 
 
 6. create changes and revert those changes after adding changes to staging area
 
