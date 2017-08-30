@@ -1,0 +1,51 @@
+1. Create a repository
+# using terminal 
+mkdir exercise && cd exercise
+git init
+
+
+2. Make some changes -- add some files, change content of some files
+# touch first.txt 
+# echo "This is first file" > first.txt
+# echo "This is second file" > second.txt
+
+3. commit changes
+git add . # add all the files to staging area
+git commit -m "Initialised repository with 2 files."
+
+
+4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
+touch .gitignore # adds a gitignore file 
+
+5. create changes and revert those changes using git when those changes are not added to staging are
+
+6. create changes and revert those changes after adding changes to staging area
+
+7. create change and revert those changes after committing those changes .
+
+8. Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
+
+9. Display all the commits .
+
+10. Display a specific commit .
+
+11. create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
+
+12. Make some commits on "feature1".
+
+13. Make some commits on branch "master".
+
+14. merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches) 
+
+15.create branch "feature2" from master .
+
+16. Make some commits on "feature2".
+
+17. Make some commits on branch "master".
+rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+
+18. find the differences between "merge" and "rebase" in above cases.
+
+19. Use git stash
+
+20. create a repository on github for your working repository and push changes on remote repository.
