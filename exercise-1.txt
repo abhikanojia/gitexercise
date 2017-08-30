@@ -15,7 +15,24 @@ git commit -m "Initialised repository with 2 files."
 
 
 4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
-touch .gitignore # adds a gitignore file 
+# answer
+
+touch .gitignore # adds a gitignore file
+echo "this is test file" > first.txt # change file's content
+git diff first.txt # shows changes in files
+# output
+--- a/tes.txt
++++ b/tes.txt
+@@ -1 +1 @@
+-This is first file
++Change in test file
+
+git add tes.txt # adds provided file to staging area
+or 
+git add -u # adds all modified files to staging area
+git commit -m "Changed first file " # 
+
+
 
 5. create changes and revert those changes using git when those changes are not added to staging are
 
